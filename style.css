@@ -1,0 +1,771 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Kumbh Sans', sans-serif;
+}
+
+.navbar{
+	background: rgba(255, 230, 230, 0.6);
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+
+.navbar_container{
+	display: flex;
+	justify-content: space-between;
+	height: 70px;
+	z-index: 1;
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+#navbar_logo{
+	background-color: #660033;
+	background-image: linear-gradiet(to top, #660033 0%, #e6004c 100%);
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 2em;
+	font-family: 'Eczar', serif;
+}
+
+
+.navbar_menu{
+	display: flex;
+	align-items: center;
+	list-style: none;
+	text-align: center;
+}
+
+.navbar_item{
+	height: 70px;
+}
+
+.navbar_links{
+	color: #660033;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	padding: 0 1em;
+	height: 100%;
+}
+
+.navbar_item::after{
+	content: '';
+	width: 0%;
+	height: 2px;
+	background: #ff0000;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+
+.navbar_item:hover::after{
+	width: 100%;
+	border: 1px solid rgba(255, 230, 230, 0.6);
+}
+
+
+@media screen and (max-width: 700px){
+	.navbar_container{
+		display: flex;
+		justify-content: space-between;
+		height: 80px;
+		z-index: 1;
+		width: 100%;
+		max-width: 130px;
+		padding: 0;
+	}
+
+	.navbar_menu{
+		display: grid;
+		grid-template-columns: auto;
+		margin: 0;
+		width: 100%;
+		position: absolute;
+		top: -1000px;
+		opacity: 0;
+		transition: all 0.5s ease;
+		height: 100vh;
+		z-index: -1;
+		background: rgb(255, 230, 230);
+	}
+
+	.navbar_menu.active{
+		background: rgb(255, 230, 230);
+		top: 100%;
+		opacity: 1;
+		transition: all0.5s ease;
+		z-index: 99;
+		height: 100vh;
+		font-size: 1.6em;
+	}
+
+	#navbar_logo{
+		padding-left: 25px;
+		position: relative;
+		left: -125%;
+	}
+
+	.navbar_toggle .bar{
+		width: 25px;
+		height: 3px;
+		margin: 5px auto;
+		transition: all o.3s ease-in-out;
+		background: #660033;
+	}
+
+	.navbar_item{
+		width: 100%;
+	}
+
+	.navbar_links{
+		text-align: left;
+		padding: 1em;
+		width: 100%;
+		display: table;
+	}
+
+	#modile-menu{
+		position: absolute;
+		top: 20%;
+		transform: translate(5%, 20%);
+	}
+
+	.navbar_toggle .bar{
+		display: block;
+		cursor: pointer;
+	}
+
+	#modile-menu.is-active .bar:nth-child(2){
+		opacity: 0;
+	}
+
+	#modile-menu.is-active .bar:nth-child(1){
+		transform: translate(8px) rotate(45deg);
+	}
+
+	#modile-menu.is-active .bar:nth-child(3){
+		transform: translate(-8px) rotate(-45deg);
+	}
+}
+
+/* Hero section */
+
+.main{
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(255, 255, 204, 0.7), rgba(255, 230, 204, 0.5)), url(img/japan_restaurant.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+
+.main_text-box{
+	width: 90%;
+	color: #000000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.main_text-box h1{
+	font-size: 58px;
+	font-family: 'Eczar', serif;
+}
+
+.main_text-box p{
+	margin: 10px 0 40px;
+	font-size: 20px;
+	color: #000000;
+}
+
+.txb_btn1{
+	display: inline-block;
+	text-decoration: none;
+	color: #990000;
+	border: 1px solid #990000;
+	padding: 12px 34px;
+	font-size: 19px;
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+	margin-bottom: 13px;
+}
+
+
+.txb_btn2{
+	display: inline-block;
+	text-decoration: none;
+	color: #994d00;
+	border: 1px solid #994d00;
+	padding: 10px 30px;
+	font-size: 18px;
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+}
+
+.txb_btn1:hover{
+	border: 1px solid #ff6666;
+	background: #ff6666;
+	transition: 1s;
+}
+
+.txb_btn2:hover{
+	border: 1px solid #ffb366;
+	background: #ffb366;
+	transition: 1s;
+}
+
+@media screen and (max-width: 700px){
+	.main_text-box h1{
+		font-size: 48px;
+	}
+}
+
+/* Services Section */
+
+.services{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+
+.services h1{
+	font-size: 36px;
+	font-weight: 600;
+	font-family: 'Eczar', serif;
+}
+
+.services_items{
+	margin-top: 5%;
+	display: flex;
+	justify-content: space-btween;
+}
+
+.services_card{
+	flex-basis: 31%;
+	background: #ffffcc;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	padding: 20px 12px;
+	box-sizing: border-box;
+	margin-left: 15px;
+	transition: 0.5s;
+}
+
+.services_card a{
+	text-decoration: none;
+	color: #000000;
+	border: 1px solid #ffffcc;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 2px 5px;
+	background: transparent;
+	position: relative;
+	cursor: pointer;
+}
+
+.services_card a:hover{
+	border: 1px solid rgba(255, 204, 204, 0.3);
+	background: rgba(255, 204, 204, 0.3);
+}
+
+.services_card h3{
+	text-align: center;
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+.services_card:hover{
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 700px){
+	.services_items{
+		flex-direction: column;
+	}
+}
+
+/* About delivery */
+
+.delivery{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.bc{
+	background-position: center;
+	background-size: cover;
+	padding: 50px;
+}
+
+#free{
+	font-size: 24px;
+}
+
+.bc ul{
+	list-style-type: none;
+	text-align: center;
+	font-size: 20px;
+	color: #1a3300;
+}
+
+.bc h1{
+	font-size: 36px;
+	font-weight: 600;
+	font-family: 'Eczar', serif;
+}
+
+.bc ul li{
+	width: 100%;
+}
+
+@media screen and(max-width: 700px){
+	.bc h1{
+		font-size: 28px;
+	}
+}
+
+/* Pop Dishes */
+
+.popular_dishes{
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.popular_dishes h1{
+	font-size: 36px;
+	font-weight: 600;
+	font-family: 'Eczar', serif;
+}
+
+.list_of_dishes{
+	margin-top: 5%;
+	display: flex;
+	flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.dishes{
+	flex-basis: 32%;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;
+	margin-left: 15px;
+}
+
+.dishes img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.layer{
+	background: transparent;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.5S;
+}
+
+.layer h3{
+	font-family: 'Eczar', serif;
+	width: 100%;
+	font-weight: 500;
+	color: #660033;
+	font-size: 26px;
+	bottom: 0;
+	left: 59%;
+	transform: translateX(-50%);
+	position: absolute;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.layer:hover{
+	background: rgba(255, 204, 204, 0.7);
+}
+
+.layer:hover h3{
+	bottom: 49%;
+	opacity: 1;
+}
+
+@media screen and (max-width: 700px){
+	.list_of_dishes{
+		flex-direction: column;
+	}
+}
+
+
+/* Pop koktails  */
+
+.popular_coctails{
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	padding-top: 50px;
+}
+.popular_coctails h1{
+	font-size: 36px;
+	font-weight: 600;
+	font-family: 'Eczar', serif;
+}
+
+
+/* Footer css */
+
+.footer_container{
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+}
+
+.footer_container p{
+	font-size: 10px;
+	margin-top: 20px;
+}
+
+.footer_container a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.footer_container a:hover{
+	color: red;
+	border: 1px solid;
+	border-radius: 3px;
+}
+
+.footer_container h4{
+	margin-bottom: 15px;
+	margin-top: 20px;
+	font-weight: 600;
+}
+
+/* Gallery */
+
+#main_part_gallery{
+	width: 100%;
+	background-color: #e6dbf0;
+}
+
+.food_container{
+	display: inline-block;
+	columns: 2;
+	margin-top: 5%;
+	width: 80%;
+	position: relative;
+	text-align: center;
+}
+
+.food{
+	text-align: center;
+}
+
+.food h1{
+	display: block;
+	font-family: 'Eczar', serif;
+	padding-top: 20px;
+	font-size: 56px;
+}
+
+.img_container{
+	margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;
+	margin-left: 5px;
+	border-radius: 5px;
+}
+
+.img_container img{
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: 2px solid white;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+.img_container:hover{
+	transform: scale(1.06);
+	transition: 0.2s ease-in;
+}
+
+.restaurant_container{
+	display: inline-block;
+	columns: 2;
+	margin-top: 5%;
+	width: 80%;
+	position: relative;
+	text-align: center;
+}
+
+.restaurant{
+	text-align: center;
+}
+
+.restaurant h1{
+	display: block;
+	font-family: 'Eczar', serif;
+	padding-top: 20px;
+	font-size: 56px;
+}
+
+@media screen and (max-width: 700px){
+	.food h1{
+		font-size: 48px;
+	}
+	.restaurant h1{
+		font-size: 48px;
+	}
+	.food_container{
+		columns: 2;
+	}
+	.restaurant_container{
+		columns: 2;
+	}
+}
+
+
+/* Menu */
+
+#main_part_menu{
+	width: 100%;
+	background-color: #f7f7ed;
+}
+
+.menu{
+	text-align: center;
+}
+
+.menu h1{
+	display: block;
+	font-family: 'Eczar', serif;
+	padding-top: 20px;
+	font-size: 56px;
+}
+
+
+@media screen and (max-width: 700px){
+	.menu h1{
+		font-size: 48px;
+	}
+}
+
+
+/* Reservation */
+
+.main2{
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(247, 247, 237, 0.5), rgba(247, 247, 237, 0.4)), url(img/japan_kitchen.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+
+.number{
+	display: block;
+	text-align: center;
+}
+
+.number h3{
+	display: block;
+	font-family: 'Eczar', serif;
+	padding-top: 30px;
+	font-size: 24px;
+}
+
+.number h2{
+	isplay: block;
+	padding-top: 10px;
+	font-size: 36px;
+}
+
+.reservation_container{
+	text-align: center;
+	position: relative;
+	align-items: center;
+	width: 100%;
+	background-image: linear-gradient(rgba(240, 240, 219, 0.4), rgba(250, 250, 209, 0.9));
+}
+
+.reservation_container h3{
+	display: block;
+	font-family: 'Eczar', serif;
+	padding-top: 30px;
+	font-size: 24px;
+}
+
+.reservation{
+	display: inline-block;
+	margin-top: 5%;
+	width: 80%;
+	position: relative;
+	text-align: left;
+}
+
+.input_data{
+	width: 100%;
+	margin: 5px;
+	height: 35px;
+}
+select{
+	width: 100%;
+	margin: 5px;
+	height: 20px;
+}
+
+#num_clients{
+	width: 100px;
+}
+
+#textarea{
+	width: 100%;
+	height: 150px;
+}
+
+#btn{
+	padding: 10px 20px;
+	color: #000000;
+	max-width: 80px;
+	background: #ffd9cc;
+	border: 1px solid #fff;
+	cursor: pointer;
+}
+
+#btn:hover{
+	transform: scale(1.05);
+}
+
+
+/* delivary */
+
+hr{
+	border: none;
+	background-color: #000000;
+	height: 1px;
+	margin: 10px;
+}
+
+#main_delivary{
+	width: 100%;
+}
+
+.contact{
+	text-align: center;
+}
+
+.contact h1{
+	display: block;
+	font-family: 'Eczar', serif;
+	padding-top: 20px;
+	font-size: 56px;
+}
+
+.more_contact{
+	width: 80%;
+	text-align: center;
+	display: inline-block;
+}
+
+.more_contact p{
+	font-size: 14px;
+	padding: 0;
+}
+
+.more_contact h5{
+	color: #ff0055;
+	padding: 10px 0;
+}
+
+.more_contact h4{
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.more_contact h2{
+	font-size: 26px;
+	padding-bottom: 20px;
+	color: #ff6666;
+}
+
+.links{
+	width: 80%;
+	text-align: center;
+	display: inline-block;
+}
+
+.links h4{
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.logo_link{
+	text-decoration: none;
+	display: block;
+	position: relative;
+	text-align: center;
+}
+
+.logo_link img{
+	width: 40%;
+	height: 200px;
+	margin: 15px 0;
+	display: inline-block;
+}
+
+.logo_link img:hover{
+	transform: scale(1.07);
+	transition: 0.7s;
+}
+
+.links p{
+	padding: 10px 0;
+	color: #ff0055;
+}
+
+.links h2{
+	font-size: 26px;
+	padding-top: 20px;
+	color: #ff6666;
+}
+
+@media screen and (max-width: 700px){
+	.logo_link img{
+	width: 250px;
+	height: 130px;
+	}
+	.links h2{
+	font-size: 20px;
+	}
+}
